@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Train detils and signup from</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="errorMsg"></div>
+    <div class="Traintable">
+        <table class="train-details">
+            <thead class="t-head">
+                <th>Serial Number</th>
+                <th>Train Number</th>
+                <th>Train Name</th>
+                <th>Train Starting Date And Time</th>
+                <th>Train Starting Station</th>
+                <th>Train Destation</th>
+            </thead>
+            <tr class="train">
+                <td>1</td>
+                <td>1234</td>
+                <td>Intercity Express</td>
+                <td>Every day & 7:30AM</td>
+                <td>Secunderabad Junction</td>
+                <td>Vijayawad Junction</td>
+            </tr>
+            <tr class="train">
+                <td>2</td>
+                <td>6599</td>
+                <td>Konark Express</td>
+                <td>Every day & 10:30AM</td>
+                <td>Secunderabad Junction</td>
+                <td>Kolkata Junction</td>
+            </tr>
+        </table>
+    </div>
+    <div class="lsection">
+        <form>
+            <div class="login">
+                <h2>SignUp form</h2>
+            </div>
+            <div class="container">
+                <input id="Uname" type="text" placeholder="Enter User Name">
+                <input id="email" type="text" placeholder="enter you email id">
+                <input id="Pword" type="password" placeholder="Enter Password">
+                <input id="cPword" type="password" placeholder="Enter Password"> 
+                 <select id="gender">
+                    <option value="option1">Male</option>
+                    <option value="option2">Female</option>
+                    <option value="option3">Others</option>
+                  </select> 
+                <button id="loginButton" type="submit">submit</button>
+            </div>
+            <div class="container">
+                <p> have an account? <a href="#">Sign in</a></p>
+            </div>
+        </form>
+    </div>
+    <script>
+        
+const form = document.querySelector('.lsection form');
+const usernameInput = document.querySelector('#Uname');
+const emailInput = document.querySelector('#email');
+const passwordInput = document.querySelector('#Pword');
+const confirmPasswordInput = document.querySelector('#cPword');
+const genderSelect = document.querySelector('#gender');
+
+
+form.addEventListener('submit', (event) => {
+  
+  event.preventDefault();
+
+  
+  const username = usernameInput.value.trim();
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+  const confirmPassword = confirmPasswordInput.value.trim();
+  const gender = genderSelect.value;
+
+  
+  if (username === '') {
+    alert('Please enter a username');
+    return;
+  }
+
+  if (email === '') {
+    alert('Please enter an email address');
+    return;
+  }
+
+  if (password === '') {
+    alert('Please enter a password');
+    return;
+  }
+
+  if (confirmPassword === '') {
+    alert('Please confirm your password');
+    return;
+  }
+
+  if (password !== confirmPassword) {
+    alert('Passwords do not match');
+    return;
+  }
+
+  
+  form.submit();
+  alert("signup successful ")
+
+});
+
+    </script>
+
+    
+        
+</body>
+
+</html>
